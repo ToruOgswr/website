@@ -1,0 +1,111 @@
+/* h1項目 */
+h1 {
+    color:#000518a0;
+    border-bottom: 5px double#000518a0;
+}
+
+/* h2項目 */
+h2 {
+    position: relative;
+    overflow: hidden;
+    padding: 0rem 10rem 0rem 25px;
+    border: 2px solid #000518;
+    color:#000518;
+}
+
+h2:before {
+    position: absolute;
+    top: -150%;
+    left: -193px;
+    width: 200px;
+    height: 300%;
+    color: #001468;
+    content: '';
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+    background: #001468;
+}
+
+
+/* h3項目 */
+h3 {
+    padding: 0rem 0.5rem;
+    color:#000518d0;
+    border-left: 4px solid #000518d0;
+}
+
+
+/* h4項目 */
+h4 {
+    position: relative;
+    display: inline-block;
+    color:#000518c5;
+    padding: 0 65px;
+    text-align: center;
+}
+ 
+h4:before,
+h4:after {
+    position: absolute;
+    top: calc(50% - 3px);
+    width: 50px;
+    height: 6px;
+    content: '';
+    border-top: solid 1px #000518a0;
+    border-bottom: solid 1px #000518a0;
+}
+
+h4:before {
+    left: 0;
+}
+
+h4:after {
+    right: 0;
+}
+
+/* ハイパーリンク編集 */
+a{
+	color: #0023B0;
+    text-decoration: none;
+}
+
+a:hover{
+	color: #FFBD00; /*-- 文字色をオレンジ色 --*/
+}
+
+/* FontAwesome表示用にliタグ調整 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li i {
+    padding-right: 0.5em
+}
+
+/* ナビゲーション */
+div.navi {
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: auto;
+    list-style: none;
+}
+
+div.navi > li:not(:last-child)::after {
+    content: "/";
+    padding: 0 5px 0 10px;
+}
+
+
+/* 略歴(cv)リスト */
+ul.cv{
+    column-count: 3;
+    column-count: 3;
+}
+
+/* 業績(paper)リスト */
+ul.papers li {
+    text-indent:  -3em;
+    padding-left: 3em;
+}
