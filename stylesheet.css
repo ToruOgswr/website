@@ -13,22 +13,18 @@ h1 {
     animation: fadeIn 1s ease-in-out;
 }
 
-
 /* h2 */
 h2 {
     font-size: 1.75em; 
     font-weight: bold; 
     border-left: 5px solid #001468;
     padding-left: 1rem;
-    box-shadow: inset 5px 0 10px rgba(0, 20, 104, 0.2);
     color: #000518;
     background: #f0f0f3;
     border-radius: 10px;
-    box-shadow: 7px 7px 15px #d1d1d1,
-                -7px -7px 15px #ffffff;
+    box-shadow: 7px 7px 15px #d1d1d1, -7px -7px 15px #ffffff;
     animation: fadeIn 1.2s ease-in-out;
 }
-
 
 /* h3 */
 h3 {
@@ -41,8 +37,6 @@ h3 {
     margin-bottom: 0.75rem;
 }
 
-
-
 /* h4 */
 h4 {
     text-align: center;
@@ -51,8 +45,7 @@ h4 {
     color: #000518c5;
     background: #f0f0f3;
     border-radius: 6px;
-    box-shadow: inset 3px 3px 6px #d1d1d1,
-                inset -3px -3px 6px #ffffff;
+    box-shadow: inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff;
     animation: fadeIn 1.6s ease-in-out;
 }
 
@@ -110,8 +103,7 @@ ul.cv {
     gap: 10px;
     background: #f0f0f3;
     border-radius: 12px;
-    box-shadow: 9px 9px 18px #d1d1d1,
-                -9px -9px 18px #ffffff;
+    box-shadow: 9px 9px 18px #d1d1d1, -9px -9px 18px #ffffff;
     padding: 1rem;
     animation: fadeIn 1.8s ease-in-out;
 }
@@ -122,8 +114,7 @@ ul.papers li {
     padding-left: 3em;
     background: #f0f0f3;
     border-radius: 8px;
-    box-shadow: inset 4px 4px 8px #d1d1d1,
-                inset -4px -4px 8px #ffffff;
+    box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
     margin-bottom: 1rem;
     animation: fadeIn 2s ease-in-out;
 }
@@ -132,7 +123,7 @@ ul.papers li {
    ナビゲーション（Navigation）
    ========================== */
 
-   div.navi {
+div.navi {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -154,10 +145,39 @@ div.navi > li:not(:last-child)::after {
     color: #0023B0;
 }
 
+/* ==========================
+   テーブルスタイル（Table）
+   ========================== */
 
+table {
+    width: 100%; /* 親要素の幅に合わせる */
+    border-collapse: collapse;
+}
+
+/* テーブルセルのスタイル */
 th, td {
     font-size: 1rem; 
     padding: 0.1rem; 
-    word-break: break-word;
+    word-break: break-word; /* 単語単位で折り返し */
+    white-space: normal; /* 自然に折り返す */
 }
 
+/* スマホ用の調整 */
+@media screen and (max-width: 768px) {
+    /* スマホでのフォントサイズを大きく */
+    th, td {
+        font-size: 1.2rem;
+        padding: 0.4rem;
+    }
+
+    /* テーブルを横スクロール可能に */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 小さくなりすぎないように */
+    table {
+        min-width: 600px;
+    }
+}
