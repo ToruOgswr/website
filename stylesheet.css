@@ -146,38 +146,49 @@ div.navi > li:not(:last-child)::after {
 }
 
 /* ==========================
-   テーブルスタイル（Table）
+   フレックスボックスレイアウト（Table 代替）
    ========================== */
-
-table {
-    width: 100%; /* 親要素の幅に合わせる */
-    border-collapse: collapse;
+   .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
-/* テーブルセルのスタイル */
-th, td {
-    font-size: 1rem; 
-    padding: 0.1rem; 
-    word-break: break-word; /* 単語単位で折り返し */
-    white-space: normal; /* 自然に折り返す */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
 }
 
-/* スマホ用の調整 */
+.row:last-child {
+    border-bottom: none;
+}
+
+.column {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.column a {
+    text-decoration: none;
+    color: #0023B0;
+}
+
+.column a:hover {
+    color: #E88F74;
+}
+
+/* ==========================
+   スマホ対応（768px 以下）
+   ========================== */
 @media screen and (max-width: 768px) {
-    /* スマホでのフォントサイズを大きく */
-    th, td {
-        font-size: 1.2rem;
-        padding: 0.4rem;
-    }
-
-    /* テーブルを横スクロール可能に */
-    .table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* 小さくなりすぎないように */
-    table {
-        min-width: 600px;
+    .row {
+        flex-direction: column;
     }
 }
